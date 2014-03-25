@@ -11,6 +11,30 @@ slavePositioner = document.createElement \div
     ..className = "map-positioner slave"
 slaveContainer.appendChild slavePositioner
 ig.containers.base.appendChild slaveContainer
+$masterContainer = $ ig.containers.base
+$slaveContainer = $ slaveContainer
+$slider = $ "<div />"
+    ..addClass \slider
+    ..appendTo $masterContainer
+    ..append "<div class='arrow left'>2000<div></div></div>"
+    ..append "<div class='arrow right'>2011<div></div></div>"
+draggingSlider = no
+onSliderDrag = (evt) ->
+    return unless draggingSlider
+    x = evt.clientX - offX
+    x = 0    if x < 0
+    x = maxX if x > maxX
+    $slider.css \left x
+    $slaveContainer.css \width maxX - x
+
+$slider.on \mousedown (evt) ->
+    evt.preventDefault!
+    draggingSlider := yes
+    onSliderDrag evt
+$ document .on \mouseup -> draggingSlider := no
+offX = $masterContainer.offset!left
+maxX = $masterContainer.width!
+$ document .on \mousemove onSliderDrag
 
 options =
     minZoom: 3,
@@ -74,5 +98,5 @@ for let grid in [grid1, grid2]
         ..on \mouseout (evt) ->
             tooltip.hide!
             displayedHere := null
-$ ig.containers.base .on \mouseout ->
+$masterContainer.on \mouseout ->
     tooltip.hide!

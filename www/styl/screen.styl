@@ -16,26 +16,58 @@
     .map-container
         position absolute
         top 0px
-        left 0px
         bottom 0px
-        width 50%
         overflow hidden
         a
             text-decoration none
             color #333
         .map-positioner
             top 0px
-            left 0px
             bottom 0px
 
             position absolute
         &.master
+            left 0px
             width 100%
             .map-positioner
                 width 100%
+                left 0px
         &.slave
-            left 50%
+            right 0px
+            width 50%
             .map-positioner
-                width 200%
-                left -100%
+                width 650px
+                right 0px
                 background transparent
+    .slider
+        position absolute
+        top 8px
+        left 50%
+        width 115px
+        margin-left (@width / -2)
+        height 22px
+        opacity 0.6
+        font-size 0.9em
+        font-weight bold
+        cursor e-resize
+        .arrow
+            div
+                background iurl("arrow.svg") no-repeat
+                width 24px
+                height 22px
+                position absolute
+                top 0px
+            position absolute
+            top 0px
+            &.left
+                background-position left
+                padding-left 20px
+                div, &
+                    left 0px
+            &.right
+                background-position right
+                padding-right 20px
+                div, &
+                    right 0px
+                div
+                    transform rotate(180deg)
