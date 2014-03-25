@@ -11,7 +11,7 @@ mapMaster = L.map masterContainer, options
 mapMaster.addLayer bgLayer = L.tileLayer "http://staticmaps.ihned.cz/tiles-world-osm//{z}/{x}/{y}.png"
 mapMaster.addLayer mapLayer = L.tileLayer do
     *   "../data/tiles/gdp-change-2000-2011/{z}/{x}/{y}.png"
-    *   attribution: 'mapová data &copy; přispěvatelé <a href="http://openstreetmap.org" target="_blank">OpenStreetMap</a>'
+    *   attribution: 'mapová data &copy; přispěvatelé <a href="http://openstreetmap.org" target="_blank">OpenStreetMap</a>, obrazový podkres <a target="_blank" href="http://ihned.cz">IHNED.cz</a>, data <a target="_blank" href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_r_e2gdp&lang=en">eurostat</a>'
 mapMaster.addLayer grid = new L.UtfGrid "../data/tiles/gdp-change-2000-2011/{z}/{x}/{y}.json", useJsonP: no
 grid
     ..on \mouseover (evt) ->

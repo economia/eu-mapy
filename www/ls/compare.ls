@@ -69,11 +69,11 @@ bgLayer = L.tileLayer "http://staticmaps.ihned.cz/tiles-world-osm//{z}/{x}/{y}.p
 bgLayer.addTo mapMaster
 mapLayer = L.tileLayer do
     *   "../data/tiles/gdp-2000/{z}/{x}/{y}.png"
-    *   attribution: 'mapová data &copy; přispěvatelé <a href="http://openstreetmap.org" target="_blank">OpenStreetMap</a>'
+    *   attribution: 'mapová data &copy; přispěvatelé <a href="http://openstreetmap.org" target="_blank">OpenStreetMap</a>, obrazový podkres <a target="_blank" href="http://ihned.cz">IHNED.cz</a>, data <a target="_blank" href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_r_e2gdp&lang=en">eurostat</a>'
 
 mapLayer2 = L.tileLayer do
     *   "../data/tiles/gdp-2011/{z}/{x}/{y}.png"
-    *   attribution: 'mapová data &copy; přispěvatelé <a href="http://openstreetmap.org" target="_blank">OpenStreetMap</a>'
+    *   attribution: 'mapová data &copy; přispěvatelé <a href="http://openstreetmap.org" target="_blank">OpenStreetMap</a>, obrazový podkres <a target="_blank" href="http://ihned.cz">IHNED.cz</a>, data <a target="_blank" href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=nama_r_e2gdp&lang=en">eurostat</a>'
 
 mapLayer.addTo mapMaster
 mapLayer2.addTo mapSlave
