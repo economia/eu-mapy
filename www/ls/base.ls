@@ -86,14 +86,14 @@ for let grid, index in [grid1, grid2]
     grid
         ..on \mousemove (evt) ->
             if displayedHere isnt displayedSomewhere
-                [nuts, name, value] = displayedHere
+                [name, value] = displayedHere
                 displayedSomewhere := displayedHere
-                tooltip.display "<b>#name</b><br /> HDP na obyvatele v roce #{years[index]}: #value &euro;"
+                tooltip.display "<b>#name</b><br /> HDP na obyvatele v roce #{years[index]}: #{ig.utils.formatPrice value} &euro;"
         ..on \mouseover (evt) ->
-            [nuts, name, value] = evt.data
+            [name, value] = evt.data
             displayedHere := evt.data
             displayedSomewhere := evt.data
-            tooltip.display "<b>#name</b><br /> HDP na obyvatele v roce #{years[index]}: #value &euro;"
+            tooltip.display "<b>#name</b><br /> HDP na obyvatele v roce #{years[index]}: #{ig.utils.formatPrice value} &euro;"
         ..on \mouseout (evt) ->
             tooltip.hide!
             displayedHere := null
