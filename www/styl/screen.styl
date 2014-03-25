@@ -1,0 +1,41 @@
+@import colors
+@import prefixes
+@import extraIg
+
+.ig
+    @import basics
+.tooltip
+    margin-top -20px
+.ig.base
+    leftColumn = 85px
+    float left
+    width 650px
+    height 650px
+    overflow hidden
+    position relative
+    .map-container
+        position absolute
+        top 0px
+        left 0px
+        bottom 0px
+        width 50%
+        overflow hidden
+        a
+            text-decoration none
+            color #333
+        .map-positioner
+            top 0px
+            left 0px
+            bottom 0px
+
+            position absolute
+        &.master
+            width 100%
+            .map-positioner
+                width 100%
+        &.slave
+            left 50%
+            .map-positioner
+                width 200%
+                left -100%
+                background transparent
