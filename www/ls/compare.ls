@@ -1,5 +1,4 @@
 return unless ig.containers.compare
-tooltip = new Tooltip!
 masterContainer = document.createElement \div
     ..className = "map-container master"
 masterPositioner = document.createElement \div

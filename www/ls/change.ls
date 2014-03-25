@@ -1,5 +1,4 @@
 return unless ig.containers.change
-tooltip = new Tooltip!
 options =
     minZoom: 3,
     maxZoom: 7,
