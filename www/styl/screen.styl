@@ -17,8 +17,39 @@ body
     a
         text-decoration none
         color #333
+    .legend
+        position absolute
+        bottom 20px
+        left 0px
+        list-style-type none
+        margin 0px
+        padding 0px
+        border 1px solid #aaa
+        border-top-right-radius 6px
+        border-bottom-right-radius 6px
+        overflow hidden
+        z-index 99
+        li
+             padding 0px
+             margin 0px
+             float left
+             font-size 0.8em
+             font-weight bold
+             padding 2px 4px
+             color #333
+ .ig.change
+     .legend li
+         &:first-child
+         &:last-child
+            color #eee
+
 
 .ig.compare
+    .legend li
+        &:nth-child(6)
+        &:nth-child(7)
+        &:last-child
+           color #eee
     .map-container
         position absolute
         top 0px

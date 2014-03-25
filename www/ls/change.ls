@@ -21,3 +21,12 @@ grid
         tooltip.display "<b>#name</b><br />Mezi roky 2000 a 2011 se HDP zvýšilo o #{percHuman}% (z #{ig.utils.formatPrice pre}&euro; na #{ig.utils.formatPrice post}&euro;)"
     ..on \mouseout (evt) ->
         tooltip.hide!
+addLegend do
+    *   masterContainer
+    *   [\#d73027 "88%"]
+        [\#ffffbf "100%"]
+        [\#d9ef8b "118%"]
+        [\#a6d96a "136%"]
+        [\#66bd63 "154%"]
+        [\#1a9850 "172%"]
+        [\#006837 "387%"]

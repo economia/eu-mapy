@@ -103,3 +103,14 @@ for let grid, index in [grid1, grid2]
             displayedHere := null
 $masterContainer.on \mouseout ->
     tooltip.hide!
+
+addLegend do
+    *   masterContainer
+    *   [\#deebf7 "2 900&euro;"]
+        [\#c6dbef "6 500&euro;"]
+        [\#9ecae1 "11 560&euro;"]
+        [\#6baed6 "16 620&euro;"]
+        [\#4292c6 "21 680&euro;"]
+        [\#2171b5 "26 740&euro;"]
+        [\#08519c "31 800&euro;"]
+        [\#08306b "86 000&euro;"]
