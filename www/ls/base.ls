@@ -56,10 +56,14 @@ mapSlave.on \move ->
     mapMaster.setView center, zoom, animate: no
 
 mapMaster.on \zoomstart (evt) ->
-    setImmediate -> mapSlave.setZoom evt.target._animateToZoom
+    <~ setImmediate
+    return if mapMaster.getZoom! == evt.target._animateToZoom
+    mapSlave.setView evt.target._animateToCenter, evt.target._animateToZoom
 
 mapSlave.on \zoomstart (evt) ->
-    setImmediate -> mapMaster.setZoom evt.target._animateToZoom
+    <~ setImmediate
+    return if mapSlave.getZoom! == evt.target._animateToZoom
+    mapMaster.setView evt.target._animateToCenter, evt.target._animateToZoom
 
 bgLayer = L.tileLayer "http://staticmaps.ihned.cz/tiles-world-osm//{z}/{x}/{y}.png"
 bgLayer.addTo mapMaster
