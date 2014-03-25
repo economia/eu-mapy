@@ -80,21 +80,20 @@ mapLayer2.addTo mapSlave
 mapMaster.addLayer grid1
 mapSlave.addLayer grid2
 displayedSomewhere = null
-i = 0
-for let grid in [grid1, grid2]
-    ii = i++
+years = [2000 2011]
+for let grid, index in [grid1, grid2]
     displayedHere = null
     grid
         ..on \mousemove (evt) ->
             if displayedHere isnt displayedSomewhere
                 [nuts, name, value] = displayedHere
                 displayedSomewhere := displayedHere
-                tooltip.display "#name #value"
+                tooltip.display "<b>#name</b><br /> HDP na obyvatele v roce #{years[index]}: #value &euro;"
         ..on \mouseover (evt) ->
             [nuts, name, value] = evt.data
             displayedHere := evt.data
             displayedSomewhere := evt.data
-            tooltip.display "#name #value"
+            tooltip.display "<b>#name</b><br /> HDP na obyvatele v roce #{years[index]}: #value &euro;"
         ..on \mouseout (evt) ->
             tooltip.hide!
             displayedHere := null
