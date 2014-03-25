@@ -20,7 +20,7 @@ externalData =
     style: "#__dirname/www/screen.css"
 
 preferScripts = <[ postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
-deferScripts = <[ base.js compare.js change.js ]>
+deferScripts = <[ base.js compare.js change.js compare-pps.js change-pps.js ]>
 develOnlyScripts = <[ _loadData.js _loadExternal.js]>
 gzippable = <[ ]>
 build-styles = (options = {}, cb) ->
