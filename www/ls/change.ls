@@ -19,6 +19,6 @@ grid
         [name, [pre, post]] = evt.data
         perc = post / pre - 1
         percHuman = (perc * 100).toFixed 2
-        tooltip.display "<b>#name</b><br />Mezi roky 2000 a 2011 se HDP zvýšilo o #{percHuman}% (z #{pre}&euro; na #{post}&euro;)"
+        tooltip.display "<b>#name</b><br />Mezi roky 2000 a 2011 se HDP zvýšilo o #{percHuman}% (z #{ig.utils.formatPrice pre}&euro; na #{ig.utils.formatPrice post}&euro;)"
     ..on \mouseout (evt) ->
         tooltip.hide!
