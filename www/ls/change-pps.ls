@@ -20,7 +20,7 @@ grid
         perc = post / pre - 1
         verb = if perc > 0 then "zvýšila" else "snížila"
         percHuman = (Math.abs perc * 100).toFixed 2
-        tooltip.display "<b>#name</b><br />Mezi roky 2000 a 2011 se kupní síla #{verb} o #{percHuman}% (z #{ig.utils.formatPrice pre}&euro; na #{ig.utils.formatPrice post}&euro;)"
+        tooltip.display "<b>#name</b><br />Mezi roky 2000 a 2011 se kupní síla #{verb} o #{percHuman}% (z #{ig.utils.formatPrice pre} &euro; na #{ig.utils.formatPrice post} &euro;)"
     ..on \mouseout (evt) ->
         tooltip.hide!
 addLegend do
