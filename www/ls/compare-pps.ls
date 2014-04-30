@@ -93,12 +93,12 @@ for let grid, index in [grid1, grid2]
             if displayedHere isnt displayedSomewhere
                 [name, value] = displayedHere
                 displayedSomewhere := displayedHere
-                tooltip.display "<b>#name</b><br /> Kupní síla v roce #{years[index]}: #{ig.utils.formatPrice value} PPS"
+                tooltip.display "<b>#name</b><br /> Kupní síla v roce #{years[index]}: #{ig.utils.formatPrice value} &euro; (přepočítané na kupní sílu)"
         ..on \mouseover (evt) ->
             [name, value] = evt.data
             displayedHere := evt.data
             displayedSomewhere := evt.data
-            tooltip.display "<b>#name</b><br /> Kupní síla v roce #{years[index]}: #{ig.utils.formatPrice value} PPS"
+            tooltip.display "<b>#name</b><br /> Kupní síla v roce #{years[index]}: #{ig.utils.formatPrice value} &euro; (přepočítané na kupní sílu)"
         ..on \mouseout (evt) ->
             tooltip.hide!
             displayedHere := null
